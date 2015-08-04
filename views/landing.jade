@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    body
+        .container
+          .header.clearfix
+          .jumbotron
+            h1 Coming Soon
+            p.lead
+              | Chocolate & Beer & Sex & Money
+            p
+              a.btn.btn-lg.btn-success(href='#', role='button') Get Yours Now
+          footer.footer
+            //- p © Company 2015
+
+block additional_js
+    script(src='js/landingController.js')
+    script(type="text/javascript" charset="utf-8").
+        $(document).ready( function() {
+            console.log('hello landing');
+        });

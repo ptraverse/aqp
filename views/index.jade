@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	body
+		div(ng-controller="IndexCtrl")
+			input(type="text" id="fooVar1Input" ng-model="fooVar1")
+			div(style="white-space: pre;")
+				| {{ fooVar1 }}
+			input(type="text" id="nameInput" ng-model="name")
+			div(ng-show="name")
+				| Hello {{ name | capitalize }}
+			div(ng-show="currentTime")
+				| The time is {{ currentTime | date : 'short' }}
+
+
+block additional_js
+	script(src='js/indexController.js')
+	script(type="text/javascript" charset="utf-8").
+		$(document).ready( function() {
+			$("#fooVar1Input").focus();
+		});

@@ -1,0 +1,26 @@
+{
+  "name": "aqp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.3",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "fs": "0.0.2",
+    "jade": "^1.11.0",
+    "path": "^0.11.14",
+    "request": "^2.60.0"
+  },
+  "devDependencies": {
+    "amdefine": "^1.0.0",
+    "forever": "^0.15.1",
+    "nodemon": "^1.4.0"
+  }
+}
