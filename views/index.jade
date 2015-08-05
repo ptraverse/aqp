@@ -1,16 +1,28 @@
 extends layout
 
 block content
-	body
-		div(ng-controller="IndexCtrl")
-			input(type="text" id="fooVar1Input" ng-model="fooVar1")
-			div(style="white-space: pre;")
-				| {{ fooVar1 }}
-			input(type="text" id="nameInput" ng-model="name")
-			div(ng-show="name")
-				| Hello {{ name | capitalize }}
-			div(ng-show="currentTime")
-				| The time is {{ currentTime | date : 'short' }}
+	body(ng-app='aqpApp')
+		//- div.
+			//- <timer />
+		//- div(ng-controller="IndexController").
+		//- 	input(type="text" id="fooVar1Input" ng-model="fooVar1")
+		//- 	div(style="white-space: pre;")
+		//- 		| {{ fooVar1 }}
+		//- 	input(type="text" id="nameInput" ng-model="name")
+		//- 	div(ng-show="name")
+		//- 		| Hello {{ name | capitalize }}
+		//- 	div(ng-show="currentTime")
+		//- 		| The time is {{ currentTime | date : 'short' }}
+		//- div(ng-controller="StatsController")
+		//- 	div(ng-show="fooVar2")
+		//- 		| {{ fooVar2 }}
+		div(ng-controller="IndexController")
+			h3
+				timer(countdown='4', interval='1000', finish-callback="callbackTimer.finished()") {{ countdown }}
+				//- button(ng-click='startTimer()', ng-disabled='timerRunning') Start Timer
+				//- button(ng-click='stopTimer()', ng-disabled='!timerRunning') Stop Timer
+
+
 
 
 block additional_js

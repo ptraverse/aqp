@@ -10,6 +10,7 @@ var app = express();
 
 app.use(bodyParser());
 app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + '/bower_components'));
 
 
 app.get('/', function (req, res) {
