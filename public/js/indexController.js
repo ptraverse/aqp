@@ -1,36 +1,56 @@
-var aqpApp = angular.module('aqpApp', ['timer']);
-
+var aqpApp = angular.module('aqpApp', []);
 
 aqpApp.controller('IndexController', function ($scope) {
-  $scope.fooVar1 = 'someValue';
-  $scope.name = '';
-  $scope.currentTime = Date.now();
 
-  $scope.timerRunning = true;
+    var awesomeWords = [
+        'cash',
+        'money',
+        'sex',
+        'music',
+        'wine',
+        'chocolate',
+        'scotch',
+        'cigars',
+        'leather',
+        'gold',
+        'silk',
+        'satin',
+        'velvet',
+        'champagne',
+        'caviar',
+        'candles',
+        'jazz',
+        'roses',
+        'oil'
+    ];
 
-  $scope.startTimer = function (){
-    $scope.$broadcast('timer-start');
-    $scope.timerRunning = true;
-  };
+    //select 2 to 5 words and fencepost with & and capitalize
+    var makePhrase = function(array) {
+        var n = Math.floor((Math.random() * 5) + 2);
+        var arrayLength = array.length;
+        var phrase = '';
+        while (n > 0) {
+            index = Math.floor((Math.random() * arrayLength) + 1);
+            word = array[index];
+            if (word!==undefined) {
+                if (n===1) {
+                    phrase = phrase+' '+capitalize(word);
+                } else {
+                    phrase = phrase+' '+capitalize(word)+' &';
+                }
+                array.splice(index, 1);
+                n = n - 1;
+            }
+        }
+        return phrase;
+    };
 
-  $scope.stopTimer = function (){
-    $scope.$broadcast('timer-stop');
-    $scope.timerRunning = false;
-  };
+    var capitalize = function(input) {
+        return input.charAt(0).toUpperCase() + input.slice(1);
+    };
 
-  $scope.$on('timer-stopped', function (event, data){
-    console.log('Timer Stopped - data = ', data);
-  });
+    var aweomsePhrase = makePhrase(awesomeWords);
 
-});
+    $scope.awesomePhrase = aweomsePhrase;
 
-aqpApp.controller('StatsController', function ($scope) {
-  $scope.fooVar2 = 'someOtherValue';
-});
-
-
-aqpApp.filter('capitalize', function() {
-	return function(input) {
-		return input.charAt(0).toUpperCase() + input.slice(1);
-	};
 });

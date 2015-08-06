@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	body(ng-app='aqpApp')
+		div(ng-controller="ScratchController")
+			input(type="text" id="fooVar1Input" ng-model="fooVar1")
+			div(style="white-space: pre;")
+				| {{ fooVar1 }}
+			input(type="text" id="nameInput" ng-model="name")
+			div(ng-show="name")
+				| Hello {{ name | capitalize }}
+			div(ng-show="currentTime")
+				| The time is {{ currentTime | date : 'short' }}
+			h3
+				timer(countdown='4', interval='1000', finish-callback="callbackTimer.finished()") {{ countdown }}
+				button(ng-click='startTimer()', ng-disabled='timerRunning') Start Timer
+				button(ng-click='stopTimer()', ng-disabled='!timerRunning') Stop Timer
+				button(ng-click='resetTimer()') Reset Timer
+
+block additional_js
+	script(src='js/scratchController.js')
+	script(type="text/javascript" charset="utf-8").
+		$(document).ready( function() {
+			$('input#nameInput').focus();
+		});

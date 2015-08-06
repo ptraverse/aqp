@@ -2,32 +2,19 @@ extends layout
 
 block content
 	body(ng-app='aqpApp')
-		//- div.
-			//- <timer />
-		//- div(ng-controller="IndexController").
-		//- 	input(type="text" id="fooVar1Input" ng-model="fooVar1")
-		//- 	div(style="white-space: pre;")
-		//- 		| {{ fooVar1 }}
-		//- 	input(type="text" id="nameInput" ng-model="name")
-		//- 	div(ng-show="name")
-		//- 		| Hello {{ name | capitalize }}
-		//- 	div(ng-show="currentTime")
-		//- 		| The time is {{ currentTime | date : 'short' }}
-		//- div(ng-controller="StatsController")
-		//- 	div(ng-show="fooVar2")
-		//- 		| {{ fooVar2 }}
-		div(ng-controller="IndexController")
-			h3
-				timer(countdown='4', interval='1000', finish-callback="callbackTimer.finished()") {{ countdown }}
-				//- button(ng-click='startTimer()', ng-disabled='timerRunning') Start Timer
-				//- button(ng-click='stopTimer()', ng-disabled='!timerRunning') Stop Timer
-
-
-
+		.container(ng-controller="IndexController")
+			.header.clearfix
+			.jumbotron
+				h1 Free Swag
+				p.lead
+					| {{ awesomePhrase }}
+				p
+					a.btn.btn-lg.btn-success(href='#', role='button') Get Some
+				footer.footer
 
 block additional_js
 	script(src='js/indexController.js')
 	script(type="text/javascript" charset="utf-8").
 		$(document).ready( function() {
-			$("#fooVar1Input").focus();
+
 		});
