@@ -6,7 +6,13 @@ Yet Another Rewrite of QP - this time with AngularJS
 	git clone
 	npm update
 	bower update
-	npm start 
-	
+	sudo npm start
 
+
+## Mongodb Notes
+[http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/]
+	sudo apt-get install mongodb-org
+	sudo mkdir /data/db
+	sudo chmod 0755 /data/db
+	mongod -f ./mongod.conf
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "mongod -f ./mongod.conf & nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +16,9 @@
     "express": "^4.13.3",
     "fs": "0.0.2",
     "jade": "^1.11.0",
+    "mongodb": "^1.4.39",
+    "mongoskin": "^1.4.13",
+    "mysql": "^2.8.0",
     "path": "^0.11.14",
     "request": "^2.60.0"
   },
