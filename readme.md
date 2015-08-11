@@ -3,11 +3,10 @@
 Yet Another Rewrite of QP - this time with AngularJS
 
 ## Build
-	git clone
+	git clone https://github.com/ptraverse/aqp.git && cd aqp
 	npm update
 	bower update
 	sudo npm start
-
 
 ## Mongodb Notes
 * [http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/]
