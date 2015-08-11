@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "mongod -f ./mongod.conf & nodemon index.js",
+    "start": "mongod -f ./mongod.conf & ./node_modules/mongodb-rest/bin/mongodb-rest & nodemon index.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +17,7 @@
     "fs": "0.0.2",
     "jade": "^1.11.0",
     "mongodb": "^1.4.39",
+    "mongodb-rest": "^0.10.13",
     "mongoskin": "^1.4.13",
     "mysql": "^2.8.0",
     "path": "^0.11.14",

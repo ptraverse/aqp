@@ -10,9 +10,10 @@ Yet Another Rewrite of QP - this time with AngularJS
 
 
 ## Mongodb Notes
-[http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/]
-	sudo apt-get install mongodb-org
-	sudo mkdir /data/db
-	sudo chmod 0755 /data/db
-	mongod -f ./mongod.conf
+# [http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/]
+# sudo apt-get install mongodb-org
+# sudo mkdir /data/db
+# sudo chmod 0755 /data/db
+# mongod -f ./mongod.conf
 
+![alt text](/mongodbrest.JPG "REST Interface for Mongodb")
