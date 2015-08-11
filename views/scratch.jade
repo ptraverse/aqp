@@ -16,6 +16,8 @@ block content
 				button(ng-click='startTimer()', ng-disabled='timerRunning') Start Timer
 				button(ng-click='stopTimer()', ng-disabled='!timerRunning') Stop Timer
 				button(ng-click='resetTimer()') Reset Timer
+			div(ng-repeat="c in companiesList")
+					li {{ c.name }}
 
 block additional_js
 	script(src='js/scratchController.js')

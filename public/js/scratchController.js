@@ -1,6 +1,6 @@
-var aqpApp = angular.module('aqpApp', ['timer']);
+var aqpApp = angular.module('aqpApp', ['timer', 'ngResource']);
 
-aqpApp.controller('ScratchController', function ($scope) {
+aqpApp.controller('ScratchController', function ($scope, $resource, $location) {
 	$scope.fooVar1 = 'fooVal1';
 	$scope.name = '';
 	$scope.currentTime = '';
@@ -26,6 +26,22 @@ aqpApp.controller('ScratchController', function ($scope) {
 		console.log('Timer Stopped - data = ', data);
 	});
 
+	var host = $location.host();
+	var companyTable = $resource(
+		'http://'+host+':3000/aqp/companies/:id',
+		{ id:'@_id'},
+		{ 'query':
+			{
+				method: 'GET',
+				isArray: true
+			}
+		}
+	);
+	console.log(companyTable);
+	$scope.companiesList = companyTable.query({}, function (companies) {
+		return companies;
+	});
+
 });
 
 aqpApp.filter('capitalize', function() {
@@ -33,3 +49,4 @@ aqpApp.filter('capitalize', function() {
 		return input.charAt(0).toUpperCase() + input.slice(1);
 	};
 });
+

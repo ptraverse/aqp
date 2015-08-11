@@ -14,4 +14,9 @@ Yet Another Rewrite of QP - this time with AngularJS
 * mongo needs data directory in `sudo mkdir /data/db &&  sudo chmod 0755 /data/db`
 * start mongodaemon (included in npm start) with `mongod -f ./mongod.conf`
 * angular mongodb-rest port 3000 (included in npm start) with `./node_modules/mongodb-rest/bin/mongodb-rest`
-![REST Interface for Mongodb](/mongodbrest.JPG)
+* ![REST Interface for Mongodb](/postman.JPG)
+* [https://github.com/codecapers/mongodb-rest]
+
+## VM Notes
+* `npm install` with `--no-bin-links` (due to filesharing)
+* `bower install` with `--save`
