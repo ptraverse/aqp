@@ -16,7 +16,9 @@ Yet Another Rewrite of QP - this time with AngularJS
 * angular mongodb-rest port 3000 (included in npm start) with `./node_modules/mongodb-rest/bin/mongodb-rest`
 * ![REST Interface for Mongodb](/postman.JPG)
 * [https://github.com/codecapers/mongodb-rest]
+* Admin GUI @ port 8081 via `npm install --save-dev --no-bin-links mongo-express` (inlucded in npm start)
+* <img src="/express.JPG" />
 
 ## VM Notes
 * `npm install` with `--no-bin-links` (due to filesharing)
-* `bower install` with `--save`
+* `bower install` with `--save`x`

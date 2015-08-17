@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "mongod -f ./mongod.conf & ./node_modules/mongodb-rest/bin/mongodb-rest & nodemon index.js ",
+    "prestart": "mongod -f ./mongod.conf --fork --logpath /dev/null  & ./node_modules/mongodb-rest/bin/mongodb-rest & node ./node_modules/mongo-express/app.js",
+    "start":  "nodemon index.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "amdefine": "^1.0.0",
     "forever": "^0.15.1",
+    "mongo-express": "^0.21.0",
     "nodemon": "^1.4.0"
   }
 }

@@ -6,7 +6,7 @@ block content
 			.header.clearfix
 			.jumbotron
 				h1 Free Swag
-				p.lead
+				p.lead(ng-show="awesomePhrase")
 					| {{ awesomePhrase }}
 				p
 					a.btn.btn-lg.btn-success(href='#', role='button') Get Some
@@ -18,7 +18,7 @@ block content
 					a(href="/scratch" target="_blank") scratch
 
 block additional_js
-	script(src='js/indexController.js')
+	script(src='js/controllers/indexController.js')
 	script(type="text/javascript" charset="utf-8").
 		$(document).ready( function() {
 
